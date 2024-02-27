@@ -1,0 +1,130 @@
+import random 
+
+students = ['Alex', 'Bobby', 'Bob', 'Billy','James', 'Robert', 'John', 'Michael', 'David','William','Mary', 'Patricia','Jennifer','Linda', 'Elizabeth',' Barbara', 'Susan',' Jessica', ' Sarah', 'Karen']
+random.shuffle(students)
+
+def two():
+    GN = 0
+    DGN = GN + 1
+    COUNTDOWN = 0
+    print(students)
+    group1 = []
+    group2 = []
+    group3 = []
+    group4 = []
+    group5 = []
+    group6 = []
+    group7 = []
+    group8 = []
+    group9 = []
+    group10 = []
+    groups = [group1, group2, group3, group4, group5, group6, group7, group8, group9, group10]
+    for x in range(len(students)):
+         GN = 0
+         DGN = GN + 1
+         while (COUNTDOWN < 10):
+            studentPAIR1 = students.pop(0)
+            groups[GN].insert(0, studentPAIR1)
+            studentPAIR2 = students.pop(0)
+            groups[GN].insert(0, studentPAIR2)
+            print("group", DGN, groups[GN])
+            GN = GN + 1
+            DGN = GN + 1
+            COUNTDOWN = COUNTDOWN + 1
+
+def three():
+    GN = 0
+    DGN = GN + 1
+    COUNTDOWN = 0
+    BONUSCOUNT = 0
+    random.shuffle(students)
+    print(students)
+    group1 = []
+    group2 = []
+    group3 = []
+    group4 = []
+    group5 = []
+    group6 = []
+    group7 = []
+    groups = [group1, group2, group3, group4, group5, group6, group7]
+    for x in range(len(students)):
+     GN = 0
+     DGN = GN + 1
+     while (COUNTDOWN < 6):
+         studentTHREE1 = students.pop(0)
+         groups[GN].insert(0, studentTHREE1)
+         studentTHREE2 = students.pop(0)
+         groups[GN].insert(0, studentTHREE2)
+         studentTHREE3 = students.pop(0)
+         groups[GN].insert(0, studentTHREE3)
+         print("group", DGN, groups[GN])
+         GN = GN + 1
+         DGN = GN + 1
+         COUNTDOWN = COUNTDOWN + 1
+     while (COUNTDOWN == 6):
+            studentPAIR1 = students.pop(0)
+            groups[GN].insert(0, studentPAIR1)
+            studentPAIR2 = students.pop(0)
+            groups[GN].insert(0, studentPAIR2)
+            print("group", DGN, groups[GN])
+            GN = GN + 1
+            DGN = GN + 1
+            COUNTDOWN = COUNTDOWN + 1
+
+ 
+
+def four():
+    GN = 0
+    DGN = GN + 1
+    COUNTDOWN = 0
+    random.shuffle(students)
+    print(students)
+    group1 = []
+    group2 = []
+    group3 = []
+    group4 = []
+    group5 = []
+    groups = [group1, group2, group3, group4, group5]
+    for x in range(len(students)):
+         GN = 0
+         DGN = GN + 1
+         while (COUNTDOWN < 5):
+            studentFOUR1 = students.pop(0)
+            groups[GN].insert(0, studentFOUR1)
+            studentFOUR2 = students.pop(0)
+            groups[GN].insert(0, studentFOUR2)
+            studentFOUR3 = students.pop(0)
+            groups[GN].insert(0, studentFOUR3)
+            studentFOUR4 = students.pop(0)
+            groups[GN].insert(0, studentFOUR4)
+            print("group", DGN, groups[GN])
+            GN = GN + 1
+            DGN = GN + 1
+            COUNTDOWN = COUNTDOWN + 1
+def main():
+    Grouping = False
+    while (Grouping == False):
+        print(students)
+        print("select your mode")
+        print("1. Split into groups of two")
+        print("2. Split into groups of three")
+        print("3. Split into groups of four")
+        print("4. Exclude possibilities")
+        pick = input() 
+        pick = int(pick)
+        if (pick == 1):
+             two()
+             Grouping == True
+        if (pick == 2):
+             three()
+             Grouping == True
+        if (pick == 3):
+             four()
+             Grouping == True
+        if (pick == 4):
+            print("not finished")
+        else:
+            print("Pick a real answer silly!")
+            Grouping = False
+        
+main()
